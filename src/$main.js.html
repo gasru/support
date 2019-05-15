@@ -1,0 +1,29 @@
+<script>
+    
+  //срабатывает при успешноь вызове в withSuccessHandle
+      function successReceivingData(e){
+        google.script.run.completedWithoutErrors(e);
+       }
+       //срабатывает при ошибке в withFailureHandler
+       function onFailureHandler(e) {
+    google.script.run.doneWithAnError(e)
+    }
+    
+        // получает имя листа confirmed стр. 14 и запускает sendDataToServer с именем листа в качестве аргумента
+    function getStarted(){
+      google.script.run.withSuccessHandler(sendDataToServer).getId();
+//         (id)
+   
+       }
+    // запускает addContent на сервере и получает контент листа 
+    function sendDataToServer(id){
+    alert(id)
+         google.script.run
+          .withSuccessHandler(successReceivingData)
+          .withFailureHandler(onFailureHandler)
+          .withUserObject(this)
+          .addContent (id)       
+}
+         
+  </script>
+

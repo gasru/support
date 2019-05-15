@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script>
+      function updateContent(content, id) {
+      var id ='content';
+      document.getElementById(id).innerHTML = '';
+        var el = document.getElementById(id);
+        el.insertAdjacentHTML("afterBegin",content );
+      }
+      </script>
+    </head>
+  <body>
+<div align="left" class="button">
+ 	<input type="submit" size="100" value="Получить контент" id="get" onclick="getStarted()">
+	</div>
+<div align="left" class="content" id="content">
+
+</div> 
+<?!= include('$main.js'); ?>
+  </body>
+  
+</html>
